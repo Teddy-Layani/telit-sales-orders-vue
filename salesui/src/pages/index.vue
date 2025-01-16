@@ -1,27 +1,31 @@
 <template>
   <v-container fluid>
-    <v-data-table :headers="headers" :items="items" height="calc(100vh - 200px)">
+    <v-icon icon="mdi-pencil" />
+    <!-- <v-data-table :headers="headers" :items="items" height="calc(100vh - 200px)" :loading="loading">
       <template #item.ItemNumber="{ item }">
         <span @click="naviagteToItem(item)" class="cursor-pointer">{{ item.ItemNumber }}</span>
       </template>
-    </v-data-table>
+    </v-data-table> -->
   </v-container>
 </template>
 
 <script setup>
 import { getSalesOrders } from '@/core/api';
 import { onMounted, ref } from 'vue';
+import { useLocale } from 'vuetify';
 
+const { t } = useLocale();
+
+
+const loading = ref(false);
 
 const headers = ref([
   {
-    title: 'Item number',
-    // title: t('salesOrdersHeaders.itemNum'),
+    title: t('salesOrdersHeaders.itemNum'),
     key: 'orderItem.ItemNumber'
   },
   {
-    // title: t('salesOrdersHeaders.price'),
-    title: 'Price',
+    title: t('salesOrdersHeaders.price'),
     key: 'orderItem.Price'
   }
 ]);
@@ -35,6 +39,7 @@ onMounted(async () => {
 
 const loadData = async () => {
   try {
+    loading.value = true;
     const salesOrders = await getSalesOrders({
       $expand: 'SalesItemSet'
     });
@@ -55,6 +60,8 @@ const loadData = async () => {
 
   } catch (error) {
     console.log(error);
+  } finally {
+    loading.value = false;
   }
 };
 
