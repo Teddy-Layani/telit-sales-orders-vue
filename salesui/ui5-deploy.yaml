@@ -1,0 +1,24 @@
+specVersion: "3.1"
+metadata:
+  name: ui-deploy
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localservice/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: ECCDEV
+          url: http://eccdev.telital.com:80
+          client: 400
+        app:
+          name: ZSD_SALES_VUE
+          package: ZSD
+          transport: TLDK953211
+        exclude:
+          - /test/
+
