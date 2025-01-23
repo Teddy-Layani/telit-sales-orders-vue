@@ -3,7 +3,7 @@ import messages from './messages';
 
 const i18n = createI18n({
     legacy: false,
-    locale: 'he',
+    locale: 'en',
     fallbackLocale: 'en',
     messages
 });

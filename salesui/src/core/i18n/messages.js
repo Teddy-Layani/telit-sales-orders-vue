@@ -1,20 +1,24 @@
-import { he } from 'vuetify/locale';
+import { he, en } from "vuetify/locale";
 
 const messages = {
-    he: {
-        $vuetify: {
-            ...he
-        },
-        edit: 'עריכה',
-        save: 'שמירה',
-        cancel: 'ביטול',
-        title: 'הזמנות לקוח',
-        salesOrdersHeaders:{
-            itemNum:'מספר רשומה',
-            price:'מחיר'
-        }
-
-    }
+  en: {
+    $vuetify: {
+      ...en,
+    },
+  },
+  he: {
+    $vuetify: {
+      ...he,
+    },
+    edit: "עריכה",
+    save: "שמירה",
+    cancel: "ביטול",
+    title: "הזמנות לקוח",
+    salesOrdersHeaders: {
+      itemNum: "מספר רשומה",
+      price: "מחיר",
+    },
+  },
 };
 
 export default messages;
