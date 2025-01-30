@@ -61,6 +61,7 @@
           :readonly="readonly"
           :variant="readonly ? 'underlined' : 'outlined'"
           :prepend-icon="null"
+          :min="new Date()"
           prepend-inner-icon="mdi-calendar"
         />
       </v-col>
@@ -77,6 +78,7 @@
           v-model="order.ReqDateH"
           density="compact"
           label="Req. deliv. date"
+          :min="new Date()"
           :readonly="readonly"
           :variant="readonly ? 'underlined' : 'outlined'"
           :prepend-icon="null"
