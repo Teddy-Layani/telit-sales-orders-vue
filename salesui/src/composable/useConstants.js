@@ -13,6 +13,14 @@ export default function useConstants() {
       key: "MaterialDesc",
     },
     {
+      title: "Note",
+      key: "LineText"
+    },
+    {
+      title: "Plant",
+      key: "Plant"
+    },
+    {
       title: "Net Price",
       key: "Price",
     },
@@ -28,6 +36,10 @@ export default function useConstants() {
       title: "Quantity",
       key: "OrderQuantity",
     },
+    {
+      title: "",
+      key: "actions"
+    }
   ];
   return {
     orderItemColumns,

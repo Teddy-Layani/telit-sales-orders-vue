@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "zip": "cd dist && npx bestzip ../salesui-content.zip *",
-    "deploy": "fiori deploy --config ./ui5-deploy.yaml && rimraf archive.zip"
+    "deploy": "fiori deploy --config ./ui5-deploy.yaml && rimraf archive.zip",
+    "upload": "nwabap upload"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
@@ -17,6 +18,7 @@
     "@vueuse/core": "^12.5.0",
     "axios": "^1.7.9",
     "date-fns": "^4.1.0",
+    "lodash.clonedeep": "^4.5.0",
     "roboto-fontface": "*",
     "vue": "^3.4.31",
     "vue-i18n": "^11.0.1",
@@ -32,6 +34,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.4.0",
     "eslint-plugin-vue": "^9.30.0",
+    "nwabap-ui5uploader": "^1.2.0",
     "pinia": "^2.1.7",
     "rimraf": "^6.0.1",
     "sass": "1.77.8",

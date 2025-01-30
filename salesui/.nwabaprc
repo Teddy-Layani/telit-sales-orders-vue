@@ -1,0 +1,12 @@
+{
+    "base": "./dist",
+    "conn_server": "https://port3000-workspaces-ws-wqzt4.eu10.applicationstudio.cloud.sap/ECCDEV_noAuth/",
+    "conn_user": "teddyla",
+    "conn_password": "1qaz2wsx3edc$RFV",
+    "abap_package": "ZSD",
+    "abap_transport": "TLDK953211",
+    "conn_client": 400,
+    "conn_usestrictssl": false,
+    "abap_bsp": "ZSD_TEST_UI",
+    "abap_bsp_text": "Sales order UI"
+}

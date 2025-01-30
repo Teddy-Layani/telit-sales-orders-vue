@@ -1,0 +1,40 @@
+{
+    "d": {
+        "__metadata": {
+            "id": "http://eccdev.telital.com/sap/opu/odata/SAP/ZSD_MAIN_SRV/SalesOrderSet('10001512')",
+            "uri": "http://eccdev.telital.com/sap/opu/odata/SAP/ZSD_MAIN_SRV/SalesOrderSet('10001512')",
+            "type": "ZSD_MAIN_SRV.SalesOrder"
+        },
+        "Vbeln": "10001512",
+        "SoldTo": "732",
+        "ShipTo": "732",
+        "HeaderText": "",
+        "PoNumber": "Test VPSA Notificati",
+        "PoDate": "\/Date(1624233600000)\/",
+        "ReqDateH": "\/Date(1624233600000)\/",
+        "SalesItemSet": {
+            "results": [
+                {
+                    "__metadata": {
+                        "id": "http://eccdev.telital.com/sap/opu/odata/SAP/ZSD_MAIN_SRV/SalesItemSet('000010')",
+                        "uri": "http://eccdev.telital.com/sap/opu/odata/SAP/ZSD_MAIN_SRV/SalesItemSet('000010')",
+                        "type": "ZSD_MAIN_SRV.SalesItem"
+                    },
+                    "ItemNumber": "000010",
+                    "Material": "DE910DUA501T013",
+                    "MaterialDesc": "DE910-DUAL (Verizon) MODULE 15.00.021",
+                    "OrderQuantity": "50000.000",
+                    "Price": "30.000000000",
+                    "Plant": "1100",
+                    "LineText": "",
+                    "ScheduleLineDate": "\/Date(1624233600000)\/",
+                    "SalesOrder": {
+                        "__deferred": {
+                            "uri": "http://eccdev.telital.com/sap/opu/odata/SAP/ZSD_MAIN_SRV/SalesItemSet('000010')/SalesOrder"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

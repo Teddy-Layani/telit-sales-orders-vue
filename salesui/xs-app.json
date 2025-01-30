@@ -13,6 +13,13 @@
       "target": "$1"
     },
     {
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "source": "^/ECCDEV_noAuth/(.*)$",
+      "destination": "ECCDEV_noAuth",
+      "target": "$1"
+    },
+    {
       "source": "^(.*)$",
       "target": "$1",
       "service": "html5-apps-repo-rt",

@@ -2,10 +2,13 @@
   <div class="d-flex flex-column ga-2 mt-6">
     <v-row>
       <v-col :lg="2" :md="4" :sm="12">
-        <v-text-field
+        <v-autocomplete
           v-model="order.SoldTo"
-          label="Customer Number"
+          label="Sold to"
           density="compact"
+          item-title="Name1"
+          item-value="Kunnr"
+          :items="customers"
           :readonly="readonly"
           :variant="readonly ? 'underlined' : 'outlined'"
         />
@@ -13,7 +16,7 @@
       <v-col :lg="4" :md="8" :sm="12">
         <v-text-field
           v-model="order.HeaderText"
-          label="General Header Comment"
+          label="Comment"
           density="compact"
           :readonly="readonly"
           :variant="readonly ? 'underlined' : 'outlined'"
@@ -22,10 +25,13 @@
     </v-row>
     <v-row>
       <v-col :lg="2" :md="6" :sm="12">
-        <v-text-field
+        <v-autocomplete
           v-model="order.ShipTo"
-          label="Ship to Party"
+          label="Ship to"
           density="compact"
+          item-title="Name1"
+          item-value="Kunnr"
+          :items="customers"
           :readonly="readonly"
           :variant="readonly ? 'underlined' : 'outlined'"
         />
@@ -34,27 +40,31 @@
         <v-text-field
           v-model="order.PoNumber"
           density="compact"
-          label="Purchase Order No."
+          label="Purchase order no."
           :readonly="readonly"
           :variant="readonly ? 'underlined' : 'outlined'"
         />
       </v-col>
       <v-col :lg="2" :md="6" :sm="12">
-        <v-text-field
-          :model-value="purchaseOrderDateFormat"
+        <v-date-input
+          v-model="order.PoDate"
           density="compact"
-          label="PO Date"
+          label="PO date"
           :readonly="readonly"
           :variant="readonly ? 'underlined' : 'outlined'"
+          :prepend-icon="null"
+          prepend-inner-icon="mdi-calendar"
         />
       </v-col>
       <v-col :lg="2" :md="6" :sm="12">
-        <v-text-field
-          :model-value="reqDeliveryDateFormat"
+        <v-date-input
+          v-model="order.ReqDateH"
           density="compact"
-          label="Req. Deliv. Date"
+          label="Req. deliv. date"
           :readonly="readonly"
           :variant="readonly ? 'underlined' : 'outlined'"
+          :prepend-icon="null"
+          prepend-inner-icon="mdi-calendar"
         />
       </v-col>
     </v-row>
@@ -65,6 +75,7 @@
 import { formatJsonDate } from "@/utils/dateUtils";
 import { useVModel } from "@vueuse/core";
 import { computed } from "vue";
+import { VDateInput } from "vuetify/labs/VDateInput";
 
 const props = defineProps({
   modelValue: {
@@ -73,6 +84,10 @@ const props = defineProps({
   readonly: {
     type: Boolean,
     default: false,
+  },
+  customers: {
+    type: Array,
+    default: () => [],
   },
 });
 
