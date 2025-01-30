@@ -46,7 +46,15 @@
         />
       </v-col>
       <v-col :lg="2" :md="6" :sm="12">
+        <v-text-field
+          v-if="readonly"
+          :model-value="formatJsonDate(order.PoDate)"
+          label="PO date"
+          density="compact"
+          variant="underlined"
+        />
         <v-date-input
+          v-else
           v-model="order.PoDate"
           density="compact"
           label="PO date"
@@ -57,7 +65,15 @@
         />
       </v-col>
       <v-col :lg="2" :md="6" :sm="12">
+        <v-text-field
+          v-if="readonly"
+          :model-value="formatJsonDate(order.ReqDateH)"
+          variant="underlined"
+          density="compact"
+          label="Req. deliv. date"
+        />
         <v-date-input
+          v-else
           v-model="order.ReqDateH"
           density="compact"
           label="Req. deliv. date"
