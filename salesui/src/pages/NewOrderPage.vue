@@ -105,7 +105,7 @@ const initialOrderItem = {
   ScheduleLineDate: null,
 };
 
-const loading = ref(true);
+const loading = ref(false);
 
 const successPromptDialog = ref({
   show: false,

@@ -5,7 +5,7 @@ console.log(import.meta.env);
 let baseURL = import.meta.env.DEV
   ? "ECCDEV/sap/opu/odata/SAP/ZSD_MAIN_SRV"
   : "/sap/opu/odata/SAP/ZSD_MAIN_SRV";
-let shBaseURL = import.meta.env.dev
+let shBaseURL = import.meta.env.DEV
   ? "ECCDEV/sap/opu/odata/SAP/ZSD_SH_SRV"
   : "/sap/opu/odata/SAP/ZSD_SH_SRV";
 
